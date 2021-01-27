@@ -4,12 +4,11 @@ import { Button } from 'antd'
 
 const Battles: React.FC<any> = props => {
   const onRequest = () => {
-    Wechat.request('battles', {
-      action: 'query',
-      params: {
-        _openid: 'o79OX5GScMZ4ICq-Od3nup4XqvXM'
-      }
-    }).then(data => console.log(data))
+    const date = '2021-01-27'
+    Wechat.requestRpc(
+      `db.collection('battles').where({
+        createTime: _.gte(new Date('${date}'))
+      }).get()`).then(data => console.log(data))
   }
   return <div>
     <Button type="primary" onClick={onRequest}>查询</Button>

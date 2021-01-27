@@ -40,6 +40,10 @@ class Wechat {
       })
     })
   }
+
+  requestRpc(cmd: string) {
+    return this.request('rpc', { cmd })
+  }
 }
 
 export default new Wechat()
