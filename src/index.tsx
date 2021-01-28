@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import Battles from './pages/Battles';
+import Battles from './pages/Battles/index';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
